@@ -77,4 +77,4 @@ print(data[2:4]) #not getting expected output
 print(data.loc[5:1]) #includes items at index 5
 
 # Not as common, iLoc uses implicit indices
-print(data,iloc[5:1]) # doesn't include second item
+print(data.iloc[5:1]) # doesn't include second item
