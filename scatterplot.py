@@ -13,7 +13,7 @@ x = rng.normal(size=100)
 y = rng.normal(size=100)
 colors = rng.random(100)
 sizes = 1000 * rng.random(100)
-
+ 
 # Scatterplot function
 # alpha sets the opacity of the point
 plt.scatter(x, y, c=colors, s=sizes, alpha=0.3)
