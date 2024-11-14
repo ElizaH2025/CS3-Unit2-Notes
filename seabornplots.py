@@ -30,3 +30,26 @@ print(iris.head()) # data frame
 sns.pairplot(iris, hue='species', height=2.5)
 plt.savefig('sns-pairplot.png', bbox_inches='tight')
 plt.close()
+
+# _______________________________
+
+tips = sns.load_dataset('tips')
+print(tips.head())
+tips['tip percent'] = 100 * tips['tip'] / tips['total_bill']
+
+# FACET GRID
+grid = sns.FacetGrid(tips, row="sex", col="time", margin_titles=True)
+grid.map(plt.hist, "tip percent", bins=np.linspace(0, 40, 15));
+plt.savefig('sns-facetgrid.png', bbox_inches='tight')
+plt.close()
+
+# CATERGORICAL PLOT
+sns.catplot(x='day', y='total_bill', hue='sex', data=tips, kind='box')
+plt.savefig('sns-catplot.png', bbox_inches='tight')
+plt.close()
+
+# JOINT PLOT
+sns.jointplot(x="total_bill", y="tip", data=tips, kind='hex')
+plt.savefig('sns-jointplot.png', bbox_inches='tight')
+plt.close()
+
